@@ -1,11 +1,17 @@
 <section class="container-fluid">
-  <app-header (sideNavToggled)="sideNavStatus= $event;"></app-header>
+  <app-header 
+  (leftSideNavToggled)="leftSideNavStatus= $event;"
+  (rightSideNavToggled)="rightSideNavStatus= $event;"
+  ></app-header>
   <main>
     <app-side-nav 
-    [sideNavStatus]="sideNavStatus"
-    [ngClass]="{ 'app-side-nav-open': sideNavStatus}"></app-side-nav>
-    <section class="display-area" [ngClass]="{ 'display-area-shrink': sideNavStatus}">
+    [leftSideNavStatus]="leftSideNavStatus"
+    [ngClass]="{ 'app-side-nav-open': leftSideNavStatus}"></app-side-nav>
+    <section class="display-area" [ngClass]="{ 'display-area-shrink': leftSideNavStatus}">
       <p>Main Display Area</p>
     </section>
+    <app-right-side-nav
+    [rightSideNavStatus]="rightSideNavStatus"
+    [ngClass]="{ 'app-side-nav-open': rightSideNavStatus}"></app-right-side-nav>
   </main>
 </section>

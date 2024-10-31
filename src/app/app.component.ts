@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  sideNavStatus: boolean = false;
+  leftSideNavStatus: boolean = false;
+  rightSideNavStatus: boolean = false;
   title = 'ng-nav-sidebar';
 }

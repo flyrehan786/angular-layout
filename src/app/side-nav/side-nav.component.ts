@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
-  @Input() sideNavStatus: boolean = false;
+  @Input() leftSideNavStatus: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

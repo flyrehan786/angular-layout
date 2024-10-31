@@ -6,14 +6,19 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() sideNavToggled = new EventEmitter<boolean>();
-  menuStatus: boolean = false;
+  @Output() leftSideNavToggled = new EventEmitter<boolean>();
+  @Output() rightSideNavToggled = new EventEmitter<boolean>();
+  leftMenuStatus: boolean = false;
+  rightMenuStatus: boolean = false;
   constructor() { }
   ngOnInit(): void {
   }
-  sideNavToggle() {
-    console.log('clicked');
-    this.menuStatus = !this.menuStatus;
-    this.sideNavToggled.emit(this.menuStatus)
+  leftSideNavToggle() {
+    this.leftMenuStatus = !this.leftMenuStatus;
+    this.leftSideNavToggled.emit(this.leftMenuStatus)
+  }
+  rightSideNavToggle() {
+    this.rightMenuStatus = !this.rightMenuStatus;
+    this.rightSideNavToggled.emit(this.rightMenuStatus)
   }
 }
